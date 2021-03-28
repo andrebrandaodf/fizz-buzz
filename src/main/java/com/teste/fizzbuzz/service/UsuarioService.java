@@ -1,5 +1,6 @@
 package com.teste.fizzbuzz.service;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -14,23 +15,15 @@ public class UsuarioService {
 	
 	@Autowired
 	private UsuarioRepository repository;
-
+	
 	public Usuario saveUsuario(Usuario usuario) {
-		usuario.setDate(new Date());
-		usuario.setResultado(conversaoMultiplos(usuario.getNumeroChamado()));
+		usuario.setDate(LocalDate.now());
+		usuario.setResultado(conversaoMultiplos(usuario.getNumero()));
 		return repository.save(usuario);
 	}
 	
-	public List<Usuario> getUsuarios(){
-		return repository.findAll();
-	}
-	
-	public Usuario getUsuarioById(Long id) {
-		return repository.findById(id).orElse(null);
-	}
-
-	public Usuario getUsuarioByEmail(String email) {
-		return repository.findByEmail(email);
+	public List <Usuario> findByParameter(String email, LocalDate date, Integer numero, String resultado) {
+		return repository.findByParameter(email, date, numero, resultado);
 	}
 	
 	private boolean verificarMultiplos(Integer valor, Integer multiplo) {

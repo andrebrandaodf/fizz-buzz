@@ -1,7 +1,7 @@
 package com.teste.fizzbuzz.entity;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,25 +19,24 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="usuario")
-public class Usuario implements Serializable{
+@Table(name = "usuarios")
+public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Email(message = "Somente e-mail válido")
-	private String  email;
-	
+	private String email;
+
 	@NotNull
-	private Integer numeroChamado;
-	
+	private Integer numero;
+
 	private String resultado;
-	
-	private Date    date;
-	
-	
+
+	private LocalDate date;
+
 	public Long getId() {
 		return id;
 	}
@@ -54,12 +53,12 @@ public class Usuario implements Serializable{
 		this.email = email;
 	}
 
-	public Integer getNumeroChamado() {
-		return numeroChamado;
+	public Integer getNumero() {
+		return numero;
 	}
 
-	public void setNumeroChamado(Integer numeroChamado) {
-		this.numeroChamado = numeroChamado;
+	public void setNumero(Integer numero) {
+		this.numero = numero;
 	}
 
 	public String getResultado() {
@@ -70,11 +69,11 @@ public class Usuario implements Serializable{
 		this.resultado = resultado;
 	}
 
-	public Date getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 
@@ -102,10 +101,11 @@ public class Usuario implements Serializable{
 			return false;
 		return true;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", email=" + email + ", numeroChamado=" + numeroChamado + ", resultado=" + resultado + ", date=" + date + "]";
+		return "Usuario [id=" + id + ", email=" + email + ", Numero=" + numero + ", resultado="
+				+ resultado + ", date=" + date + "]";
 	}
-	
+
 }
