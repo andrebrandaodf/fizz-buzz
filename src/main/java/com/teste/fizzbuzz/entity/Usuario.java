@@ -34,10 +34,51 @@ public class Usuario implements Serializable{
 	private Integer numeroChamado;
 	
 	@NotNull
-	private Integer resultado;
+	private String resultado;
 	
 	private Date    date;
 	
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Integer getNumeroChamado() {
+		return numeroChamado;
+	}
+
+	public void setNumeroChamado(Integer numeroChamado) {
+		this.numeroChamado = numeroChamado;
+	}
+
+	public String getResultado() {
+		return resultado;
+	}
+
+	public void setResultado(String resultado) {
+		this.resultado = resultado;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
