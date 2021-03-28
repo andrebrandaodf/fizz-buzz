@@ -33,7 +33,6 @@ public class Usuario implements Serializable{
 	@NotNull
 	private Integer numeroChamado;
 	
-	@NotNull
 	private String resultado;
 	
 	private Date    date;
