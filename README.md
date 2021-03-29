@@ -38,6 +38,8 @@ GET http://localhost:8080/usuarios Lista todos os usuários
     
 GET http://localhost:8080/usuarios?date=2021-03-29 Pesquisar por data
 
+GET http://localhost:8080/usuarios?email=andrebrandaodf@gmail.com Pesquisar por email
+
 GET http://localhost:8080/usuarios?numero=5 Pesquisar por numero
 
 GET http://localhost:8080/usuarios?resultado=Buzz Pesquisar por resultado
