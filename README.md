@@ -11,15 +11,18 @@
 
 # Executando projeto
 
-1. Entrar na pasta do projeto `fizz-buzz` 
+1. Clonar projeto 'fizz-buzz'
+	`git clone https://github.com/andrebrandaodf/fizz-buzz.git`
+	
+2. Entrar na pasta do projeto `fizz-buzz` 
 
 	`cd fizz-buzz`
  
-2. Executar o servidor spring 
+3. Executar o servidor spring 
 
-	`./mvnw spring-boot:run`
+	`mvn spring-boot:run`
 
-# Métodos Usuario
+# Consumindo API REST
 
 **Inserindo Usuario via POSTMAN**
 
