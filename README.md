@@ -21,7 +21,7 @@
 
 # Métodos CRUD Usuario
 
-**Inserindo Usuario**
+**Inserindo Usuario via POSTMAN**
 
 POST http://localhost:8080/usuarios 
 
