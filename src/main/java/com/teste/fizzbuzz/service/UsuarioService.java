@@ -15,14 +15,14 @@ public class UsuarioService {
 	@Autowired
 	private UsuarioRepository repository;
 	
-	public Usuario saveUsuario(Usuario usuario) {
-		usuario.setDate(LocalDate.now());
+	public Usuario salvarUsuario(Usuario usuario) {
+		usuario.setData(LocalDate.now());
 		usuario.setResultado(conversaoMultiplos(usuario.getNumero()));
 		return repository.save(usuario);
 	}
 	
-	public List <Usuario> findByParameter(String email, LocalDate date, Integer numero, String resultado) {
-		return repository.findByParameter(email, date, numero, resultado);
+	public List <Usuario> buscarPorParametro(String email, LocalDate data, Integer numero, String resultado) {
+		return repository.buscarPorParametro(email, data, numero, resultado);
 	}
 	
 	private boolean verificarMultiplos(Integer valor, Integer multiplo) {

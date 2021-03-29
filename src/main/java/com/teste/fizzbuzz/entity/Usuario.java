@@ -35,7 +35,7 @@ public class Usuario implements Serializable {
 
 	private String resultado;
 
-	private LocalDate date;
+	private LocalDate data;
 
 	public Long getId() {
 		return id;
@@ -69,12 +69,12 @@ public class Usuario implements Serializable {
 		this.resultado = resultado;
 	}
 
-	public LocalDate getDate() {
-		return date;
+	public LocalDate getData() {
+		return data;
 	}
 
-	public void setDate(LocalDate date) {
-		this.date = date;
+	public void setData(LocalDate data) {
+		this.data = data;
 	}
 
 	@Override
@@ -105,7 +105,7 @@ public class Usuario implements Serializable {
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", email=" + email + ", Numero=" + numero + ", resultado="
-				+ resultado + ", date=" + date + "]";
+				+ resultado + ", data=" + data + "]";
 	}
 
 }

@@ -7,6 +7,6 @@ import com.teste.fizzbuzz.entity.Usuario;
 
 public interface UsuarioRepositoryCustom {
 
-	List<Usuario> findByParameter(String email,  LocalDate date, Integer numero, String resultado);
+	List<Usuario> buscarPorParametro(String email,  LocalDate data, Integer numero, String resultado);
 
 }

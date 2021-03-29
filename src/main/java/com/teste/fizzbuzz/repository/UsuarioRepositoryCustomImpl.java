@@ -15,21 +15,21 @@ public class UsuarioRepositoryCustomImpl implements UsuarioRepositoryCustom{
 	@PersistenceContext
 	private EntityManager entityManager;
 	
-	public List<Usuario> findByParameter(String email, LocalDate date, Integer numero, String resultado){ 
-		String hql = createHql(email, date, numero, resultado);
+	public List<Usuario> buscarPorParametro(String email, LocalDate data, Integer numero, String resultado){ 
+		String hql = criarHql(email, data, numero, resultado);
 		
-		return createQuery(hql, email, date, numero, resultado).getResultList();
+		return criarQuery(hql, email, data, numero, resultado).getResultList();
 	}
 	
-	private Query<Usuario> createQuery(String hql, String email, LocalDate date, Integer numero, String resultado){
+	private Query<Usuario> criarQuery(String hql, String email, LocalDate data, Integer numero, String resultado){
 		Query<Usuario> query = (Query<Usuario>) entityManager.createQuery(hql, Usuario.class);
 		
 		if(!verificarParametroVazio(email)) {
 			query.setParameter("email", email);
 		}
 
-		if(!verificarParametroVazio(date)) {
-			query.setParameter("date", date);
+		if(!verificarParametroVazio(data)) {
+			query.setParameter("data", data);
 		}
 
 		if(!verificarParametroVazio(numero)) {
@@ -43,7 +43,7 @@ public class UsuarioRepositoryCustomImpl implements UsuarioRepositoryCustom{
 		return query;
 	}
 	
-	private String createHql(String email, LocalDate date, Integer numero, String resultado){ 
+	private String criarHql(String email, LocalDate data, Integer numero, String resultado){ 
 		StringBuilder hql = new StringBuilder("Select u from Usuario u");
 
 		boolean whereAdicionado = false;
@@ -56,7 +56,7 @@ public class UsuarioRepositoryCustomImpl implements UsuarioRepositoryCustom{
 			}
 		}
 
-		if(!verificarParametroVazio(date)) {
+		if(!verificarParametroVazio(data)) {
 			hql.append(whereAdicionado?" and ": " where ");
 			hql.append("date=:date");
 			if(!whereAdicionado) {
@@ -82,16 +82,16 @@ public class UsuarioRepositoryCustomImpl implements UsuarioRepositoryCustom{
 		return hql.toString();	
 	}
 
-	private boolean verificarParametroVazio(String parameter){
-		return parameter == null || parameter.isEmpty();
+	private boolean verificarParametroVazio(String parametro){
+		return parametro == null || parametro.isEmpty();
 	}
 
-	private boolean verificarParametroVazio(LocalDate parameter){
-		return parameter == null;
+	private boolean verificarParametroVazio(LocalDate parametro){
+		return parametro == null;
 	}
 
-	private boolean verificarParametroVazio(Integer parameter){
-		return parameter == null;
+	private boolean verificarParametroVazio(Integer parametro){
+		return parametro == null;
 	}
 	
 }

@@ -26,12 +26,12 @@ public class UsuarioController {
 	
 	@PostMapping("/usuarios")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Usuario addUsuario(@Valid @RequestBody Usuario usuario) {
-		return usuarioService.saveUsuario(usuario);
+	public Usuario adicionarUsuario(@Valid @RequestBody Usuario usuario) {
+		return usuarioService.salvarUsuario(usuario);
 	}
 		
 	@GetMapping("/usuarios")
-	public List <Usuario> findByParameter(@RequestParam(required = false)  String email, @RequestParam (required = false) @DateTimeFormat(pattern="yyyy-MM-dd") LocalDate date, @RequestParam (required = false) Integer numero, @RequestParam (required = false) String resultado) {
-		return usuarioService.findByParameter(email, date, numero, resultado);
+	public List <Usuario> buscarPorParametro(@RequestParam(required = false)  String email, @RequestParam (required = false) @DateTimeFormat(pattern="yyyy-MM-dd") LocalDate data, @RequestParam (required = false) Integer numero, @RequestParam (required = false) String resultado) {
+		return usuarioService.buscarPorParametro(email, data, numero, resultado);
 	}
 }
