@@ -9,7 +9,7 @@
 * Spring Data JPA
 * Maven 4.0.0
 
-# Executando projeto
+# Executando projeto:
 
 1. Clonar projeto 'fizz-buzz'
 	`git clone https://github.com/andrebrandaodf/fizz-buzz.git`
@@ -24,7 +24,7 @@
 
 # Consumindo a API REST
 
-**Inserir Usuario**
+**Inserir Usuario:**
 
 POST http://localhost:8080/usuarios 
 
