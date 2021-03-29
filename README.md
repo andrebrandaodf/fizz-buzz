@@ -22,9 +22,9 @@
 
 	`mvn spring-boot:run`
 
-# Consumindo API REST
+# Consumindo a API REST
 
-**Inserindo Usuario via POSTMAN**
+**Inserir Usuario**
 
 POST http://localhost:8080/usuarios 
 
