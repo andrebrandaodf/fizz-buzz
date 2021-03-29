@@ -19,7 +19,7 @@
 
 	`./mvnw spring-boot:run`
 
-# Métodos CRUD Usuario
+# Métodos Usuario
 
 **Inserindo Usuario via POSTMAN**
 
